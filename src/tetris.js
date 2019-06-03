@@ -144,6 +144,7 @@ function Tetris()
 		self.reset();
 		self.stats.start();
 		document.getElementById("tetris-nextpuzzle").style.display = "block";
+		document.getElementById("tetris-nextpuzzle2").style.display = "block";
 		document.getElementById("tetris-keys").style.display = "none";
 		self.area = new Area(self.unit, self.areaX, self.areaY, "tetris-area");
 		self.puzzle = new Puzzle(self, self.area);
@@ -974,6 +975,7 @@ function Tetris()
 			this.fallDownID = setTimeout(this.fallDown, this.speed);
 			// next puzzle
 			var nextPuzzle = this.puzzles[this.nextType];
+			var nextPuzzle2 = this.puzzles[this.nextType + 1];
 			for (var y = 0; y < nextPuzzle.length; y++) {
 				for (var x = 0; x < nextPuzzle[y].length; x++) {
 					if (nextPuzzle[y][x]) {
